@@ -6,10 +6,12 @@ class App extends React.Component {
       <div className = 'catch-of-the-day'>
         <div className="menu">
           <Header/>
-            <Fish/>
-            <Fish/>
         </div>
+        <Order/>
+        <Inventory/>
       </div>
-    )
-  }
-}
+    );
+  };
+};
+
+export default App;
