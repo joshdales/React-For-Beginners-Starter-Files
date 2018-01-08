@@ -8,5 +8,16 @@ import App from './components/App'
 import StorePicker from './components/StorePicker'
 
 
+const Root = () => {
+  return (
+    <BrowserRouter>
+      <div>
+        <Match exactly pattern="/" component={StorePicker}/>
+        <Match pattern="/store/:storeId" component={App}/>
+        <Miss component={NotFound}/>
+      </div>
+    </BrowserRouter>
+  )
+}
 
-render(<App/>, document.querySelector('#main'))
+render(<Root/>, document.querySelector('#main'))
