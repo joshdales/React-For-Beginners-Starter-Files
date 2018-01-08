@@ -1,7 +1,7 @@
 import React from 'react';
 
 class StorePicker extends React.Component {
-  constructor() {
-
+  render() {
+    return <p>'Hello'</p>
   }
 }
