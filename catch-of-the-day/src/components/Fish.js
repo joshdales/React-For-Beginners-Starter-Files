@@ -3,9 +3,9 @@ import React from 'react';
 class Fish extends React.Component {
   render() {
     return (
-      <li>Fish</li>
+      <li className="menu-fish">Fish</li>
     );
   };
 };
 
-export default Fish
+export default Fish;
