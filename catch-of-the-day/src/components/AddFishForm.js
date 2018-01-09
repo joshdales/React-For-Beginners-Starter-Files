@@ -3,7 +3,7 @@ import React from 'react';
 class AddFishForm extends React.Component {
   render() {
     return (
-      <p>hello</p>
+      <h2>Add Fish Form</h2>
     )
   }
 }
