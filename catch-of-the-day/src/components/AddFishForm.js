@@ -3,7 +3,14 @@ import React from 'react';
 class AddFishForm extends React.Component {
   render() {
     return (
-      <h2>Add Fish Form</h2>
+      <form className="fish-edit">
+        <input type="text" placeholder="Fish Name"/>
+        <input type="text" placeholder="Fish Price"/>
+        <input type="text" placeholder="Fish Status"/>
+        <input type="text" placeholder="Fish Desc"/>
+        <input type="text" placeholder="Fish Image"/>
+        <button type="submit">+ Add Item</button>
+      </form>
     )
   }
 }
