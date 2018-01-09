@@ -11,6 +11,12 @@ class App extends React.Component {
       order: {}
     };
   }
+
+  addFish(fish) {
+    const finshes = {...this.state.fishes}
+    
+  }
+
   render() {
     return (
       <div className = 'catch-of-the-day'>
