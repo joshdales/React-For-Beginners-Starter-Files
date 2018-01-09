@@ -13,8 +13,9 @@ class App extends React.Component {
   }
 
   addFish(fish) {
-    const finshes = {...this.state.fishes}
-    
+    const fishes = {...this.state.fishes}
+    const timestamp = Date.now();
+    fishes[`fish-${timestamp}`] = fish
   }
 
   render() {
