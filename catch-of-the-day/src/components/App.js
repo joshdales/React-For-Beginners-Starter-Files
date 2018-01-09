@@ -28,8 +28,8 @@ class App extends React.Component {
       fishes: sampleFishes
     });
   };
-
   render() {
+    const { fishes, order } = this.state
     return (
       <div className = 'catch-of-the-day'>
         <div className="menu">
