@@ -1,3 +1,10 @@
+.order-enter {
+  background: #f00;
+  transition: all 0.5s;
+}
+.order-enter.order-enter-active {
+  background: #ff0;
+}
 @font-face {
   font-family: "haymakerregular";
   src: url("./fonts/haymaker-webfont.eot");
