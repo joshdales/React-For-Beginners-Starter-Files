@@ -18,6 +18,13 @@ class App extends React.Component {
     };
   };
 
+  componentWillMount(){
+    this.ref = base.syncState(`${this.props.params.stopreId}/fishes`, {
+      context: this,
+      state: 'fishes'
+    });
+  };
+
   addFish(fish) {
     const fishes = {...this.state.fishes};
     const timestamp = Date.now();
