@@ -6,6 +6,7 @@ class Inventory extends React.Component {
     return(
       <section>
         <h2>Inventory</h2>
+        {Object.keys(this.props.fishes)}
         <AddFishForm addFish={this.props.addFish}/>
         <button onClick={this.props.loadSamples}>Load Sample Fishes</button>
       </section>
