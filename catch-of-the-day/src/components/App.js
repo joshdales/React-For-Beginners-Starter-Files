@@ -11,9 +11,10 @@ class App extends React.Component {
     super();
     this.addFish = this.addFish.bind(this);
     this.loadSamples = this.loadSamples.bind(this);
-    this.addToOrder = this.addToOrder.bind(this);
     this.updateFish = this.updateFish.bind(this);
     this.removeFish = this.removeFish.bind(this);
+    this.addToOrder = this.addToOrder.bind(this);
+    this.removeFromOrder = this.removeFromOrder.bind(this);
     this.state = {
       fishes: {},
       order: {}
@@ -26,14 +27,13 @@ class App extends React.Component {
       state: 'fishes'
     });
 
-    const localStorageRef = localStorage.getItem(`order-${[this.props.params.storeId]}`)
+    const localStorageRef = localStorage.getItem(`order-${[this.props.params.storeId]}`);
 
     if (localStorageRef) {
       this.setState({
         order: JSON.parse(localStorageRef)
-      })
-    }};
-
+      });
+  }};
 
   componentWillUnmount() {
     base.removeBinding(this.ref)
@@ -68,6 +68,12 @@ class App extends React.Component {
     this.setState({ order });
   };
 
+  removeFromOrder(key) {
+    const order = {...this.state.order};
+    delete order[key];
+    this.setState({ order });
+  }
+
   loadSamples() {
     this.setState({
       fishes: sampleFishes
@@ -86,8 +92,8 @@ class App extends React.Component {
             )}
           </ul>
         </div>
-        <Order fishes={fishes} order={order} params={this.props.params}/>
-        <Inventory fishes={fishes} addFish={this.addFish} loadSamples={this.loadSamples} updateFish={this.updateFish} removeFish={this.removeFish}/>
+        <Order fishes={fishes} order={order} params={this.props.params} removeFromOrder={this.removeFromOrder} />
+        <Inventory fishes={fishes} addFish={this.addFish} loadSamples={this.loadSamples} updateFish={this.updateFish} />
       </div>
     );
   };

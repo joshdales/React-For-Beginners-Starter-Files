@@ -12,19 +12,22 @@ class Order extends React.Component {
     const count = this.props.order[key];
 
     if (!fish || fish.status === 'unavailable') {
-      return <li key={key}>Sorry, {fish ? fish.name : 'fish'} is no longer unavailable</li>
-    }
+      return (
+        <li key={key}>
+          Sorry, {fish ? fish.name : 'fish'} is no longer unavailable
+        </li>
+    )};
 
     return (
       <li key={key}>
         <span>{count}lbs {fish.name}</span>
         <span className="price">{formatPrice(count * fish.price)}</span>
       </li>
-    )
-  }
+
+    )};
 
   render() {
-    const { fishes, order } = this.props;
+    const { fishes, order, removeFromOrder } = this.props;
     const orderIDs = Object.keys(order);
     const total = orderIDs.reduce((prevTotal, key) => {
       const fish = fishes[key];
