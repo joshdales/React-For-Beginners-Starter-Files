@@ -29,6 +29,11 @@ class App extends React.Component {
     base.removeBinding(this.ref)
   };
 
+  componentWillUpdate(nextProps, nextState) {
+    console.log('something changed');
+    console.log(nextProps, nextState);
+  };
+
   addFish(fish) {
     const fishes = {...this.state.fishes};
     const timestamp = Date.now();
