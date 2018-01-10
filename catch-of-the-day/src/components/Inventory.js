@@ -2,18 +2,24 @@ import React from 'react';
 import AddFishForm from './AddFishForm'
 
 class Inventory extends React.Component {
-
+  constructor() {
+    super();
+    this.renderInventory = this.renderInventory.bind(this);
+  };
+  
   renderInventory(key) {
+    const fish = this.props.fishes[key];
+
     return (
       <div className="fish-edit" key={key}>
-        <input type="text" name="name" placeholder="Fish name" />
-        <input type="text" name="price" placeholder="Fish price" />
-        <select type="text" name="status" placeholder="Fish status">
+        <input type="text" name="name" value={fish.name} placeholder="Fish name" />
+        <input type="text" name="price" value={fish.price} placeholder="Fish price" />
+        <select type="text" name="status" value={fish.status} placeholder="Fish status">
           <option value="available">Fresh!</option>
           <option value="unavailable">Sold Out!</option>
         </select>
-        <textarea name="desc" placeholder="Fish desc" />
-        <input type="text" name="image" placeholder="Fish image" />
+        <textarea name="desc" value={fish.desc} placeholder="Fish desc" />
+        <input type="text" name="image" value={fish.image} placeholder="Fish image" />
       </div>
     )
   }
