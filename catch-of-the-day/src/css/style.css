@@ -22,6 +22,15 @@
   max-height: 0;
   padding: 0;
 }
+.count-enter {
+  transition: all 0.25s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+.count-enter.count-enter-active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
 @font-face {
   font-family: "haymakerregular";
   src: url("./fonts/haymaker-webfont.eot");
