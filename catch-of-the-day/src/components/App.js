@@ -30,8 +30,7 @@ class App extends React.Component {
   };
 
   componentWillUpdate(nextProps, nextState) {
-    console.log('something changed');
-    console.log(nextProps, nextState);
+    localStorage.setItem(`order-${this.props.params.storeId}`)
   };
 
   addFish(fish) {
