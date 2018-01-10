@@ -1,6 +1,9 @@
 .order-enter {
   background: #f00;
   transition: all 0.5s;
+  transformX: -120%;
+  max-height: 0;
+  padding: 0 !important;
 }
 .order-enter.order-enter-active {
   background: #ff0;
