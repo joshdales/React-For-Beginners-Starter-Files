@@ -4,9 +4,9 @@ import {formatPrice} from '../helpers';
 class Fish extends React.Component {
   render() {
     const { name, price, status, desc, image } = this.props.fish;
-    const isAvailable = status === 'avaailable';
+    const isAvailable = status === 'available';
     const buttonText = isAvailable ? 'Add to Order' : 'Sold Out'
-    
+
     return (
       <li className="menu-fish">
         <img src={image} alt={name}/>
@@ -14,7 +14,7 @@ class Fish extends React.Component {
           <span className="price">{formatPrice(price)}</span>
         </h3>
         <p>{desc}</p>
-        <button>Add To Order</button>
+        <button disabled={!isAvailable}>{buttonText}</button>
       </li>
     );
   };
