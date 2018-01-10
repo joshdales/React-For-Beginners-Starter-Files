@@ -2,8 +2,11 @@ import React from 'react';
 
 class Order extends React.Component {
   render() {
+    const { fishes, order } = this.props
     return (
-      <p>Order</p>
+      <div className="order-wrap">
+        <h2>Your Order</h2>
+      </div>
     );
   };
 };
