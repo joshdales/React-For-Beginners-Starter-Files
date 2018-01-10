@@ -2,6 +2,14 @@ import React from 'react';
 import { formatPrice } from '../helpers'
 
 class Order extends React.Component {
+  renderOrder(key) {
+    const fish = this.props.fishes[key];
+    const count = this.props.order[key];
+
+    if (!fish || fish.status == 'unavailable') {
+      return <li key={key}>Sorry, {fish ? fish.name : 'fish'} is no longer unavailable</li>
+    }
+  }
 
   render() {
     const { fishes, order } = this.props;
@@ -20,6 +28,7 @@ class Order extends React.Component {
       <div className="order-wrap">
         <h2>Your Order</h2>
         <ul className="order">
+          {orderIDs.map(this.renderOrder)}
           <li className="total">
             <strong>Total:</strong>
             {formatPrice(total)}
