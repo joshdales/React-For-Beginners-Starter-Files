@@ -5,7 +5,16 @@ class Inventory extends React.Component {
 
   renderInventory(key) {
     return (
-      <div className="fish-edit" key={key}></div>
+      <div className="fish-edit" key={key}>
+        <input type="text" name="name" placeholder="Fish name" />
+        <input type="text" name="price" placeholder="Fish price" />
+        <select type="text" name="status" placeholder="Fish status">
+          <option value="available">Fresh!</option>
+          <option value="unavailable">Sold Out!</option>
+        </select>
+        <textarea name="desc" placeholder="Fish desc" />
+        <input type="text" name="image" placeholder="Fish image" />
+      </div>
     )
   }
 
